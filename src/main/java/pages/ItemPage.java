@@ -25,7 +25,13 @@ public class ItemPage extends BasePageObject {
     public WebElement search;
 
     public void countOfItems() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         numsActual = BaseSteps.getDriver().findElements(By.xpath("//article//h3/a")).size();
+
     }
 
     public void rememberVariable(int num) {
